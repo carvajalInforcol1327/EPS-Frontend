@@ -1,0 +1,63 @@
+
+<div class="col-md-6 offset-md-3">
+  <h3 class="text-center">Registrar cita</h3>
+  <!--SE DECLARA EL METODO DE NUESTRO COMPONENTE RESGITRAR especialista-->
+  <!--ngModel se encraga de relacionar nuestro formulario, con el especialista creado en egistrar especialista TS-->
+  <form (ngSubmit)= "onSubmit()" #citaForm = "ngForm">
+      <div class="form-group">
+       <label>Cita: </label>
+          <input type = "date"
+          class = "form-control"
+           id = "fecha"
+           [(ngModel)] = "cita.fecha"
+           name = "fecha"
+           required
+           placeholder="Digite fecha"
+           #fecha = "ngModel"
+          >
+          <div class="alert alert-danger" *ngIf= "fecha.invalid && (fecha.dirty || fecha.touched)">
+              <div *ngIf= "fecha.errors.required">
+                  Digite su nombre por favor
+              </div>
+              <div *ngIf= "fecha.errors.minlength">
+                  Debe contener minimo 4 caracteres
+              </div>
+              <div *ngIf= "fecha.errors.maxlength">
+                  Debe contener maximo 10 carcateres
+              </div>
+          </div>
+
+        </div>
+        <form (ngSubmit)= "onSubmit()" #citaForm = "ngForm">
+          <div class="form-group">
+           <label>Cita: </label>
+              <input type = "input"
+              class = "form-control"
+               id = "paciente"
+               [(ngModel)] = "cita.paciente.nombres"
+               name = "fecha"
+               required
+               placeholder="Digite fecha"
+               #paciente = "ngModel"
+              >
+              <div class="alert alert-danger" *ngIf= "paciente.invalid && (paciente.dirty || paciente.touched)">
+                  <div *ngIf= "paciente.errors.required">
+                      Digite su nombre por favor
+                  </div>
+                  <div *ngIf= "paciente.errors.minlength">
+                      Debe contener minimo 4 caracteres
+                  </div>
+                  <div *ngIf= "paciente.errors.maxlength">
+                      Debe contener maximo 10 carcateres
+                  </div>
+              </div>
+
+            </div>
+
+
+
+         <button class="btn btn-success"[disabled]= "!citaForm.form.valid">Guardar</button>
+
+  </form>
+
+
