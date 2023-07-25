@@ -1,0 +1,17 @@
+.example-spacer{
+  flex: 1 1 auto;
+}
+
+.example-icon {
+  color: white; /* Establece el color del ícono */
+}
+
+.example-icon.mat-button:active,
+.example-icon.mat-button:focus,
+.example-icon.mat-button:hover {
+  background-color: transparent; /* Evita que el fondo del botón cambie */
+  box-shadow: none; /* Elimina cualquier sombra que aparezca al hacer clic */
+  color: white; /* Establece el color del ícono cuando se hace clic o se enfoca */
+}
+
+
