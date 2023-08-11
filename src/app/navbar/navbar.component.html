@@ -1,5 +1,5 @@
 <mat-toolbar color = "primary">
- <a [routerLink]="'/'"
+ <a
  mat-icon-button class = "example-icon" arial-label="Example icon-button with menu icon">
 <mat-icon>local_hospital</mat-icon>
  </a>
@@ -12,6 +12,9 @@
   <mat-icon>account_circle</mat-icon>
  </a>
 
-
+ <a [routerLink]="'/'"
+ mat-icon-button class = "example-icon favorite-icon mr20" arial-label="Example icon-button with heart icon">
+  <mat-icon>logout</mat-icon>
+ </a>
 
 </mat-toolbar>

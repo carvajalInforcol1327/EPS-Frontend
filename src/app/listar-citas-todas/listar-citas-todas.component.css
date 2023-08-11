@@ -1,0 +1,46 @@
+.tabla-azul {
+  background-color: #f5f5f5; /* Gris claro */
+  color: black; /* Color del texto en la tabla (opcional) */
+}
+
+.btn-table-dark {
+  background-color: #343a40; /* Color del fondo similar a table-dark */
+  border-color: #343a40; /* Borde similar al color de fondo */
+  color: #fff; /* Texto en color blanco */
+}
+
+.btn-container {
+  white-space: nowrap; /* Evita el salto de línea entre los botones */
+}
+
+.btn-container button {
+  margin-right: 5px; /* Espacio entre los botones */
+}
+
+.search-container {
+  position: relative; /* Asegura que el contenedor sea relativo para posicionar el campo de búsqueda y el ícono correctamente */
+  width: 100%;
+}
+
+.search-input {
+  border: none;
+  border-bottom: 1px solid #ccc;
+  outline: none;
+  padding: 5px;
+  font-size: 14px;
+  color: #333;
+  transition: border-bottom-color 0.3s ease;
+  background-color: transparent;
+  width: 100%; /* O ajusta el ancho deseado para el campo de búsqueda */
+  padding-left: 20px; /* Ajusta el espacio para el ícono de búsqueda */
+}
+
+.search-input::placeholder {
+  color: #999;
+}
+
+.search-icon {
+  position: absolute;
+  left: 5px;
+  top: 8px; /* Ajusta el espaciado vertical del ícono */
+}

@@ -1,4 +1,5 @@
 export class User {
+
   documento:number;
   tipodocumento:string;
   contrasena:string;
@@ -11,4 +12,5 @@ export class User {
   sexo:string;
   enabled:boolean;
   rol:string;
+
 }

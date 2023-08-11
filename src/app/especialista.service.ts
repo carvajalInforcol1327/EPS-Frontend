@@ -14,4 +14,11 @@ export class EspecialistaService {
   registrarEspecialista(especialista:Especialista) : Observable<Object>{
     return this.httpClient.post(`${this.baseURL}`,especialista)
   }
+
+  obtenerListaDeEspecialistas(): Observable<Especialista[]>{
+    return this.httpClient.get<Especialista[]>(`${this.baseURL}`);
+  }
+
+
+
 }

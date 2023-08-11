@@ -47,3 +47,18 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   margin-left: 70px !important;
 }
 
+.ml100{
+  margin-left: 100px !important;
+}
+
+.ml150{
+  margin-left: 180px !important;
+}
+
+.ml185{
+  margin-left: 120px !important;
+}
+
+.mr50{
+  margin-right: 50px !important;
+}

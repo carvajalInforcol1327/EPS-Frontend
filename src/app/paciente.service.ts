@@ -16,5 +16,20 @@ export class PacienteService {
     return this.httpClient.post(`${this.baseURL}`,paciente)
   }
 
+  obtenerListaDePacientes(): Observable<Paciente[]>{
+    return this.httpClient.get<Paciente[]>(`${this.baseURL}`);
+  }
+
+  actualizarPaciente(cedula:number,paciente:Paciente) : Observable<Object>{
+    return this.httpClient.put(`${this.baseURL}/${cedula}`,paciente);
+  }
+
+  obtenerPacienteCedula(cedula:number): Observable<Paciente>{
+    return this.httpClient.get<Paciente>(`${this.baseURL}/${cedula}`);
+  }
+
+  actualizarPacienteEliminar(cedula:number,paciente:Paciente) : Observable<Object>{
+    return this.httpClient.put(`${this.baseURL}/eliminar/${cedula}`,paciente);
+  }
 
 }

@@ -3,6 +3,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { User } from '../user';
 import { LoginService } from '../login.service';
+import { Location } from '@angular/common';
+import { SharedDataService } from '../shared-data.service';
 
 @Component({
   selector: 'app-login',
@@ -16,11 +18,15 @@ export class LoginComponent implements OnInit {
     "password" : '',
   }
 
-  user:User;
 
-  constructor(private snack:MatSnackBar,private router:Router,private loginService:LoginService) { }
+ user:User;
+
+  constructor(private snack:MatSnackBar,private router:Router,private loginService:LoginService, private location: Location, private sharedDataService: SharedDataService) { }
 
   ngOnInit(): void {
+    window.addEventListener('popstate', () => {
+      this.location.forward();
+    });
   }
 
   formSubmit(){
@@ -45,6 +51,7 @@ export class LoginComponent implements OnInit {
       if(this.user != null){
         if(this.user.contrasena == this.loginData.password){
             this.irALaInicio();
+            this.sharedDataService.setUser(this.user);
         }else{
           this.snack.open('La contraseña es invalida !!','Aceptar',{
             duration:3000
@@ -61,13 +68,10 @@ export class LoginComponent implements OnInit {
 
     })
 
-
-
-
   }
 
   irALaInicio(){
-    this.router.navigate(['/registrar-paciente']);
+    this.router.navigate(['/dashboard']);
   }
 
 

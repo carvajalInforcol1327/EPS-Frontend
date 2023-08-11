@@ -1,211 +1,224 @@
+<app-dashboard></app-dashboard>
 <div class="formprincipal">
-<div class="col-md-6 offset-md-3">
-  <h3 class="text-center">Registrar especialista</h3>
-  <!--SE DECLARA EL METODO DE NUESTRO COMPONENTE RESGITRAR especialista-->
-  <!--ngModel se encraga de relacionar nuestro formulario, con el especialista creado en egistrar especialista TS-->
-  <form (ngSubmit)= "onSubmit()" #especialistaForm = "ngForm">
+  <div class="col-md-6 offset-md-3">
+    <h3 class="text-center">Registrar especialista</h3>
+    <!--SE DECLARA EL METODO DE NUESTRO COMPONENTE RESGITRAR especialista-->
+    <!--ngModel se encraga de relacionar nuestro formulario, con el especialista creado en egistrar especialista TS-->
+    <form (ngSubmit)="onSubmit()" #especialistaForm="ngForm">
       <div class="form-group">
-       <label>Cedula: </label>
-          <input type = "number"
-          class = "form-control"
-           id = "cedula"
-           [(ngModel)] = "especialista.cedula"
-           name = "cedula"
-           required
-           minlength="8"
-           maxlength="10"
-           placeholder="Digite su cedula"
-           #cedula = "ngModel"
-          >
-          <div class="alert alert-danger" *ngIf= "cedula.invalid && (cedula.dirty || cedula.touched)">
-              <div *ngIf= "cedula.errors.required">
-                  Digite su nombre por favor
-              </div>
-              <div *ngIf= "cedula.errors.minlength">
-                  Debe contener minimo 4 caracteres
-              </div>
-              <div *ngIf= "cedula.errors.maxlength">
-                  Debe contener maximo 10 carcateres
-              </div>
+        <label>Cedula: </label>
+        <input
+          type="number"
+          class="form-control"
+          id="cedula"
+          [(ngModel)]="especialista.cedula"
+          name="cedula"
+          required
+          minlength="8"
+          maxlength="10"
+          placeholder="Digite su cedula"
+          #cedula="ngModel"
+        />
+        <div
+          class="alert alert-danger"
+          *ngIf="cedula.invalid && (cedula.dirty || cedula.touched)"
+        >
+          <div *ngIf="cedula.errors.required">Digite su nombre por favor</div>
+          <div *ngIf="cedula.errors.minlength">
+            Debe contener minimo 4 caracteres
           </div>
+          <div *ngIf="cedula.errors.maxlength">
+            Debe contener maximo 10 carcateres
+          </div>
+        </div>
       </div>
       <div class="form-group">
         <label>Nombre: </label>
-           <input type = "text"
-           class = "form-control"
-            id = "nombres"
-            [(ngModel)] = "especialista.nombres"
-            name = "nombres"
-            required
-            placeholder="Digite su cedula"
-            #nombres = "ngModel"
-           >
-           <div class="alert alert-danger" *ngIf= "nombres.invalid && (nombres.dirty || nombres.touched)">
-               <div *ngIf= "nombres.errors.required">
-                   Digite su nombre por favor
-               </div>
-           </div>
-       </div>
-       <div class="form-group">
+        <input
+          type="text"
+          class="form-control"
+          id="nombres"
+          [(ngModel)]="especialista.nombres"
+          name="nombres"
+          required
+          placeholder="Digite su cedula"
+          #nombres="ngModel"
+        />
+        <div
+          class="alert alert-danger"
+          *ngIf="nombres.invalid && (nombres.dirty || nombres.touched)"
+        >
+          <div *ngIf="nombres.errors.required">Digite su nombre por favor</div>
+        </div>
+      </div>
+      <div class="form-group">
         <label>Apellidos: </label>
-           <input type = "text"
-           class = "form-control"
-            id = "apellidos"
-            [(ngModel)] = "especialista.apellidos"
-            name = "apellidos"
-            required
-            placeholder="Digite su apellido"
-            #apellidos = "ngModel"
-           >
-           <div class="alert alert-danger" *ngIf= "apellidos.invalid && (apellidos.dirty || apellidos.touched)">
-               <div *ngIf= "apellidos.errors.required">
-                   Digite su apellido por favor
-               </div>
-           </div>
-       </div>
-       <div class="form-group">
+        <input
+          type="text"
+          class="form-control"
+          id="apellidos"
+          [(ngModel)]="especialista.apellidos"
+          name="apellidos"
+          required
+          placeholder="Digite su apellido"
+          #apellidos="ngModel"
+        />
+        <div
+          class="alert alert-danger"
+          *ngIf="apellidos.invalid && (apellidos.dirty || apellidos.touched)"
+        >
+          <div *ngIf="apellidos.errors.required">
+            Digite su apellido por favor
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
         <label>Rh+: </label>
-           <input type = "text"
-           class = "form-control"
-            id = "Rh+"
-            [(ngModel)] = "especialista.rh"
-            name = "rh"
-            required
-            placeholder="Digite su Rh+"
-            #rh = "ngModel"
-           >
-           <div class="alert alert-danger" *ngIf= "rh.invalid && (rh.dirty || rh.touched)">
-               <div *ngIf= "rh.errors.required">
-                   Digite su Rh+ por favor
-               </div>
-           </div>
-       </div>
-       <div class="form-group">
+        <input
+          type="text"
+          class="form-control"
+          id="Rh+"
+          [(ngModel)]="especialista.rh"
+          name="rh"
+          required
+          placeholder="Digite su Rh+"
+          #rh="ngModel"
+        />
+        <div
+          class="alert alert-danger"
+          *ngIf="rh.invalid && (rh.dirty || rh.touched)"
+        >
+          <div *ngIf="rh.errors.required">Digite su Rh+ por favor</div>
+        </div>
+      </div>
+      <div class="form-group">
         <label>Telefono: </label>
-           <input type = "text"
-           class = "form-control"
-            id = "telefono"
-            [(ngModel)] = "especialista.telefono"
-            name = "telefono"
-            required
-            minlength="10"
-            placeholder="Digite su telefono"
-            #telefono = "ngModel"
-           >
-           <div class="alert alert-danger" *ngIf= "telefono.invalid && (telefono.dirty || telefono.touched)">
-               <div *ngIf= "telefono.errors.required">
-                   Digite su telefono por favor
-               </div>
-               <div *ngIf= "telefono.errors.minlength">
-                Debe contener minimo 10 caracteres
-            </div>
-           </div>
-       </div>
-        <div class="form-group">
-          <label>Email: </label>
-             <input type = "text"
-             class = "form-control"
-              id = "correo"
-              [(ngModel)] = "especialista.correo"
-              name = "correo"
-              pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}"
-              required
-              placeholder="Digite su Email"
-              #correo = "ngModel"
-             >
-             <div class="alert alert-danger" *ngIf= "correo.invalid && (correo.dirty || correo.touched)">
-              <div *ngIf= "correo.errors.required">
-                  Digite su email por favor
-              </div>
-              <div *ngIf= "correo.errors.pattern">
-                  Digite un email valido ej: user@gmail.com
-              </div>
-              </div>
-         </div>
-         <div class="form-group">
-          <label>Departamento: </label>
-             <input type = "text"
-             class = "form-control"
-              id = "departamento"
-              [(ngModel)] = "especialista.departamento"
-              name = "departamento"
-              required
-              placeholder="Digite su departamento"
-              #departamento = "ngModel"
-             >
-             <div class="alert alert-danger" *ngIf= "departamento.invalid && (departamento.dirty || departamento.touched)">
-                 <div *ngIf= "departamento.errors.required">
-                     Digite su departamento por favor
-                 </div>
-             </div>
-         </div>
-         <div class="form-group">
-          <label>Ciudad: </label>
-             <input type = "text"
-             class = "form-control"
-              id = "ciudad"
-              [(ngModel)] = "especialista.ciudad"
-              name = "ciudad"
-              required
-              placeholder="Digite su ciudad"
-              #ciudad = "ngModel"
-             >
-             <div class="alert alert-danger" *ngIf= "ciudad.invalid && (ciudad.dirty || ciudad.touched)">
-                 <div *ngIf= "ciudad.errors.required">
-                     Digite su ciudad por favor
-                 </div>
-             </div>
-         </div>
-         <div class="form-group">
-          <label>Direccion: </label>
-             <input type = "text"
-             class = "form-control"
-              id = "direccion"
-              [(ngModel)] = "especialista.direccion"
-              name = "direccion"
-              required
-              placeholder="Digite su direccion"
-              #direccion = "ngModel"
-             >
-             <div class="alert alert-danger" *ngIf= "direccion.invalid && (direccion.dirty || direccion.touched)">
-                 <div *ngIf= "direccion.errors.required">
-                     Digite su direccion por favor
-                 </div>
-             </div>
-         </div>
-         <div class="form-group">
-          <label>Especialidad: </label>
-             <input type = "text"
-             class = "form-control"
-              id = "Especialidad"
-              [(ngModel)] = "especialista.especialidad"
-              name = "rh"
-              required
-              placeholder="Digite su Especialidad"
-              #especialidad = "ngModel"
-             >
-             <div class="alert alert-danger" *ngIf= "especialidad.invalid && (especialidad.dirty || especialidad.touched)">
-                 <div *ngIf= "rh.errors.required">
-                     Ingrese su Especialidad
-                 </div>
-             </div>
-         </div>
+        <input
+          type="text"
+          class="form-control"
+          id="telefono"
+          [(ngModel)]="especialista.telefono"
+          name="telefono"
+          required
+          minlength="10"
+          placeholder="Digite su telefono"
+          #telefono="ngModel"
+        />
+        <div
+          class="alert alert-danger"
+          *ngIf="telefono.invalid && (telefono.dirty || telefono.touched)"
+        >
+          <div *ngIf="telefono.errors.required">
+            Digite su telefono por favor
+          </div>
+          <div *ngIf="telefono.errors.minlength">
+            Debe contener minimo 10 caracteres
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Email: </label>
+        <input
+          type="text"
+          class="form-control"
+          id="correo"
+          [(ngModel)]="especialista.correo"
+          name="correo"
+          pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}"
+          required
+          placeholder="Digite su Email"
+          #correo="ngModel"
+        />
+        <div
+          class="alert alert-danger"
+          *ngIf="correo.invalid && (correo.dirty || correo.touched)"
+        >
+          <div *ngIf="correo.errors.required">Digite su email por favor</div>
+          <div *ngIf="correo.errors.pattern">
+            Digite un email valido ej: user@gmail.com
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Departamento: </label>
+        <input
+          type="text"
+          class="form-control"
+          id="departamento"
+          [(ngModel)]="especialista.departamento"
+          name="departamento"
+          required
+          placeholder="Digite su departamento"
+          #departamento="ngModel"
+        />
+        <div
+          class="alert alert-danger"
+          *ngIf="
+            departamento.invalid && (departamento.dirty || departamento.touched)
+          "
+        >
+          <div *ngIf="departamento.errors.required">
+            Digite su departamento por favor
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Ciudad: </label>
+        <input
+          type="text"
+          class="form-control"
+          id="ciudad"
+          [(ngModel)]="especialista.ciudad"
+          name="ciudad"
+          required
+          placeholder="Digite su ciudad"
+          #ciudad="ngModel"
+        />
+        <div
+          class="alert alert-danger"
+          *ngIf="ciudad.invalid && (ciudad.dirty || ciudad.touched)"
+        >
+          <div *ngIf="ciudad.errors.required">Digite su ciudad por favor</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Direccion: </label>
+        <input
+          type="text"
+          class="form-control"
+          id="direccion"
+          [(ngModel)]="especialista.direccion"
+          name="direccion"
+          required
+          placeholder="Digite su direccion"
+          #direccion="ngModel"
+        />
+        <div
+          class="alert alert-danger"
+          *ngIf="direccion.invalid && (direccion.dirty || direccion.touched)"
+        >
+          <div *ngIf="direccion.errors.required">
+            Digite su direccion por favor
+          </div>
+        </div>
+      </div>
 
-         <div class="form-group">
-          <label>Estado de actividad: </label>
-             <input type = "checkbox"
-             class = "form-control"
-              id = "enabled"
-              [(ngModel)] = "especialista.enabled"
-              name = "enabled"
-              placeholder="seleccione su estado"
-              #enabled = "ngModel"
-             >
-         </div>
+      <div class="form-group">
+        <label>Estado de actividad: </label>
+        <input
+          type="checkbox"
+          class="form-control"
+          id="enabled"
+          [(ngModel)]="especialista.enabled"
+          name="enabled"
+          placeholder="seleccione su estado"
+          #enabled="ngModel"
+        />
+      </div>
 
-
-         <button class="btn btn-success"[disabled]= "!especialistaForm.form.valid">Guardar</button>
-
-  </form>
-</div>
+      <button class="btn btn-success" [disabled]="!especialistaForm.form.valid">
+        Guardar
+      </button>
+    </form>
+  </div>
 </div>

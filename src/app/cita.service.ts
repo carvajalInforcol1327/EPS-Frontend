@@ -16,4 +16,20 @@ export class CitaService {
   registrarCita(cita:Cita) : Observable<Object>{
     return this.httpClient.post(`${this.baseURL}`,cita)
   }
+
+  obtenerListaDeCitas(): Observable<Cita[]>{
+    return this.httpClient.get<Cita[]>(`${this.baseURL}`);
+  }
+
+
+  obtenerListaDeCitasPorPaciente(cedula:number): Observable<Cita[]>{
+    return this.httpClient.get<Cita[]>(`${this.baseURL}/paciente/${cedula}`);
+  }
+
+  obtenerListaDeCitasPorEspecialista(cedula:number): Observable<Cita[]>{
+    return this.httpClient.get<Cita[]>(`${this.baseURL}/especialista/${cedula}`);
+  }
+
+
+
 }

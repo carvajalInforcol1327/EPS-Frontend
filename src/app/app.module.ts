@@ -19,6 +19,20 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import { HomeComponent } from './home/home.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { DashboardpacienteComponent } from './dashboardpaciente/dashboardpaciente.component';
+import { ListaPacientesComponent } from './lista-pacientes/lista-pacientes.component';
+import {MatTableModule} from '@angular/material/table';
+import { ActualizarPacienteComponent } from './actualizar-paciente/actualizar-paciente.component';
+import { ListarCitasPacientesComponent } from './listar-citas-pacientes/listar-citas-pacientes.component';
+import { EliminarPacienteComponent } from './eliminar-paciente/eliminar-paciente.component';
+import { MegaMenuModule } from 'primeng/megamenu';
+import { DashboardcitaComponent } from './dashboardcita/dashboardcita.component';
+import { AgendamientoComponent } from './agendamiento/agendamiento.component';
+import { FullCalendarModule } from '@fullcalendar/angular';
+import { NgSelectModule } from '@ng-select/ng-select';
+import { ListarCitasTodasComponent } from './listar-citas-todas/listar-citas-todas.component';
+import { RegistrarCitasComponent } from './registrar-citas/registrar-citas.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +42,17 @@ import { HomeComponent } from './home/home.component';
     RegistrarCitaComponent,
     NavbarComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    DashboardComponent,
+    DashboardpacienteComponent,
+    ListaPacientesComponent,
+    ActualizarPacienteComponent,
+    ListarCitasPacientesComponent,
+    EliminarPacienteComponent,
+    DashboardcitaComponent,
+    AgendamientoComponent,
+    ListarCitasTodasComponent,
+    RegistrarCitasComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,7 +66,11 @@ import { HomeComponent } from './home/home.component';
     MatInputModule,
     MatSnackBarModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+    MatTableModule,
+    MegaMenuModule,
+    FullCalendarModule,
+    NgSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

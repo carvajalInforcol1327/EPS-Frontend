@@ -1,0 +1,52 @@
+<app-dashboardpaciente></app-dashboardpaciente>
+<div class="input-group">
+  <input type="text" [(ngModel)]="filtro" placeholder="Buscar pacientes..." (input)="filtrarDatos()" class="search-input">
+  <i class="fa fa-search search-icon"></i>
+</div>
+<div class = "container">
+  <div class = "row mt15">
+    <div class= "col-md-15">
+      <div class="tabla">
+        <h2 class="blockquote-footer" style="font-weight: bold;">Lista Pacientes</h2>
+        <table class="table table-striped table-dark table-hover tabla-azul">
+          <thead class="table-dark">
+            <tr>
+              <th scope="col">Cedula</th>
+              <th>Nombres</th>
+              <th>Apellidos</th>
+              <th>Rh</th>
+              <th>Telefono</th>
+              <th>Correo</th>
+              <th>Departamento</th>
+              <th>Ciudad</th>
+              <th>Direccion</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+             <!--SE HACE UN ngFor PARA RECORRER LA LISTA DE EMPLEADOS DEFINIDA EN NUETSRO COPONENTE-->
+            <tr *ngFor= "let dato of datosFiltrados">
+              <!--SE TRAEN LOS DATOS DEL EMPLEADO-->
+              <td>{{dato.cedula}}</td>
+              <td>{{dato.nombres}}</td>
+              <td>{{dato.apellidos}}</td>
+              <td>{{dato.rh}}</td>
+              <td>{{dato.telefono}}</td>
+              <td>{{dato.correo}}</td>
+              <td>{{dato.departamento}}</td>
+              <td>{{dato.ciudad}}</td>
+              <td>{{dato.direccion}}</td>
+              <td class="btn-container">
+                <button (click)= "actualizarPaciente(dato.cedula)" class="btn btn-table-dark btn-sm d-inline-block" style="margin-right: 5px;">Editar</button>
+                <button (click)= "envioCitasPaciente(dato.cedula)"class="btn btn-secondary text-white btn-sm d-inline-block" style="margin-right: 5px;">Citas</button>
+                <button (click)= "eliminarPaciente(dato.cedula)" class="btn btn-table-dark btn-sm d-inline-block" style="margin-right: 5px;">Desactivar</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+
+
+    </div>
+  </div>
+</div>

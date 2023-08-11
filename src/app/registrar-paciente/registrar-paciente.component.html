@@ -1,5 +1,11 @@
+
+<app-dashboardpaciente></app-dashboardpaciente>
+
 <div class="formprincipal">
 <div class="col-md-6 offset-md-3">
+  <div class="fondo">
+    <img src="../assets/paciente_r.png" />
+  </div>
   <h3 class="text-center">Registrar Paciente</h3>
   <!--SE DECLARA EL METODO DE NUESTRO COMPONENTE RESGITRAR paciente-->
   <!--ngModel se encraga de relacionar nuestro formulario, con el paciente creado en egistrar paciente TS-->
@@ -37,7 +43,7 @@
             [(ngModel)] = "paciente.nombres"
             name = "nombres"
             required
-            placeholder="Digite su cedula"
+            placeholder="Digite su nombre"
             #nombres = "ngModel"
            >
            <div class="alert alert-danger" *ngIf= "nombres.invalid && (nombres.dirty || nombres.touched)">
@@ -170,19 +176,6 @@
                  </div>
              </div>
          </div>
-         <div class="form-group">
-          <label>Estado de actividad: </label>
-             <input type = "checkbox"
-             class = "form-control"
-              id = "enabled"
-              [(ngModel)] = "paciente.enabled"
-              name = "enabled"
-              placeholder="seleccione su estado"
-              #enabled = "ngModel"
-             >
-         </div>
-
-
 
          <button class="btn btn-success"[disabled]= "!pacienteForm.form.valid">Guardar</button>
 

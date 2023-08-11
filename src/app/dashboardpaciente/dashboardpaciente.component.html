@@ -1,0 +1,19 @@
+<app-dashboard></app-dashboard>
+<mat-toolbar color = "primary" style="background-color: #666;">
+
+  <span>Gestión Paciente</span>
+  <span class="example-spacer"></span>
+
+  <a [routerLink]="'/registrar-paciente'"
+  mat-icon-button class = "example-icon favorite-icon mr20 ml70" arial-label="Example icon-button with heart icon">
+   <mat-icon>edit_note</mat-icon>
+   Regsitro Pacientes
+  </a>
+
+  <a [routerLink]="'/listapacientes'"
+  mat-icon-button class = "example-icon favorite-icon mr20 ml150" arial-label="Example icon-button with heart icon">
+   <mat-icon>list_alt</mat-icon>
+   Lista Pacientes
+  </a>
+
+ </mat-toolbar>
