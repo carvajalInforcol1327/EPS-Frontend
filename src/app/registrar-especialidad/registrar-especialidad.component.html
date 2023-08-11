@@ -1,0 +1,20 @@
+<div class="d-flex justify-content-center">
+  <div class="mb-3">
+    <form>      
+      <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Nombre</label>
+          <input type="text" class="form-control" name="nombre" [(ngModel)]="especialidad.nombre">
+      </div>
+      <div class="mb-3">
+        <label for="text" class="form-label">Observaciones</label>
+        <input type="text" class="form-control" name="observaciones" [(ngModel)]="especialidad.observaciones">
+      </div>
+      <div class="form-group">
+          <label>Estado activo:</label>
+          <input type="checkbox" class="form-control" [(ngModel)]="especialidad.enabled" name="enabled">
+      </div>
+
+      <button type="submit" class="btn btn-primary" (click)="crearEspecialidad()">Guardar</button>
+    </form>
+  </div>
+</div>

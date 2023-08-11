@@ -1,3 +1,5 @@
+import { Especialidad } from "./especialidad";
+
 export class Especialista {
 
     cedula:number;
@@ -9,7 +11,7 @@ export class Especialista {
     departamento:string;
     ciudad:string;
     direccion:string;
-    especialidad:string;
+    especialidad:Especialidad ;
     enabled:boolean;
 
 
