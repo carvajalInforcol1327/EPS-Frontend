@@ -1,5 +1,7 @@
 export class Especialidad {
   id:number;
+  enabled:boolean;
   nombre:string;
-  observacion:string;
+  observaciones:string;
+
 }

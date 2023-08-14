@@ -35,6 +35,15 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   margin-right: 10px !important;
 }
 
+.mr130{
+  margin-right: 130px !important;
+}
+
+.mr40{
+  margin-right: 30px !important;
+}
+
+
 .mt10{
   margin-top: 10px !important;
 }
@@ -53,6 +62,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .ml150{
   margin-left: 180px !important;
+}
+
+.ml200{
+  margin-left: 210px !important;
 }
 
 .ml185{

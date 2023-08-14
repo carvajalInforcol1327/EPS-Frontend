@@ -33,6 +33,11 @@ import { FullCalendarModule } from '@fullcalendar/angular';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { ListarCitasTodasComponent } from './listar-citas-todas/listar-citas-todas.component';
 import { RegistrarCitasComponent } from './registrar-citas/registrar-citas.component';
+import { DashboardespecialistaComponent } from './dashboardespecialista/dashboardespecialista.component';
+import { RegistrarEspecialidadComponent } from './registrar-especialidad/registrar-especialidad.component';
+import { ListaEspecialistasComponent } from './lista-especialistas/lista-especialistas.component';
+import { ActualizarEspecialistaComponent } from './actualizar-especialista/actualizar-especialista.component';
+import { DashboardespecialidadComponent } from './dashboardespecialidad/dashboardespecialidad.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +58,11 @@ import { RegistrarCitasComponent } from './registrar-citas/registrar-citas.compo
     AgendamientoComponent,
     ListarCitasTodasComponent,
     RegistrarCitasComponent,
+    DashboardespecialistaComponent,
+    RegistrarEspecialidadComponent,
+    ListaEspecialistasComponent,
+    ActualizarEspecialistaComponent,
+    DashboardespecialidadComponent,
   ],
   imports: [
     BrowserModule,

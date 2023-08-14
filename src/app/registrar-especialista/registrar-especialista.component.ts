@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Especialista } from '../especialista';
 import { EspecialistaService } from '../especialista.service';
 import { Router } from '@angular/router';
+import { EspecialidadService } from '../especialidad.service';
+import { Especialidad } from '../especialidad';
 
 @Component({
   selector: 'app-registrar-especialista',
@@ -11,17 +13,27 @@ import { Router } from '@angular/router';
 export class RegistrarEspecialistaComponent implements OnInit {
 
   especialista: Especialista = new Especialista();
-  constructor( private especialistaService: EspecialistaService,  private router: Router ) {}
+  especialidades: Especialidad[];
+
+  constructor( private especialistaService: EspecialistaService, private especialidadService:EspecialidadService,  private router: Router ) {}
 
   ngOnInit(): void {
-  console.log(this.especialista)
+    this.listarEspecialidades();
+  }
+
+  listarEspecialidades(){
+    this.especialidadService.listarEspecialidad().subscribe(response =>{
+      this.especialidades = response;
+      console.log(this.especialidades);
+    });
   }
 
 
   guardarEspecialista(){
-    this.especialistaService.registrarEspecialista(this.especialista).subscribe(dato=>{
-        this.recarga();
-    },error => console.log(error));
+     // Método para crear un nuevo especialista
+     this.especialistaService.crearEspecialista(this.especialista)
+     .subscribe(response => console.log("EXITO!!"));
+     this.recarga(); // Llama al método para limpiar los campos
   }
 
   recarga(){
@@ -30,6 +42,10 @@ export class RegistrarEspecialistaComponent implements OnInit {
 
   onSubmit(){
     this.guardarEspecialista();
+  }
+
+  limpiarCampos() {
+    this.especialista = new Especialista(); // Restablece a un objeto Especialista nuevo
   }
 
 }

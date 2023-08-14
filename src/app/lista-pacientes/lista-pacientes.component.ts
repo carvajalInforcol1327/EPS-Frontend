@@ -36,6 +36,7 @@ export class ListaPacientesComponent implements OnInit {
       this.datosOriginales = this.pacientes;
       this.datosFiltrados = [...this.datosOriginales];
     });
+
     }
 
     actualizarPaciente(cedula:number){

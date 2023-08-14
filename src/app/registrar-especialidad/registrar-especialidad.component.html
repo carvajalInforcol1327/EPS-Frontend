@@ -1,0 +1,52 @@
+<app-dashboardespecialidad></app-dashboardespecialidad>
+<div class="formprincipal">
+  <div class="col-md-6 offset-md-3">
+    <div class="fondo">
+      <img src="../assets/especialidad.png" />
+    </div>
+    <h3 class="text-center">Registrar Especialdiad</h3>
+    <!--SE DECLARA EL METODO DE NUESTRO COMPONENTE RESGITRAR paciente-->
+    <!--ngModel se encraga de relacionar nuestro formulario, con el paciente creado en egistrar paciente TS-->
+    <form (ngSubmit)= "crearEspecialidad()" #pacienteForm = "ngForm">
+        <div class="form-group">
+         <label>Nombre: </label>
+            <input type = "text"
+            class = "form-control"
+             id = "nombre"
+             [(ngModel)] = "especialidad.nombre"
+             name = "nombre"
+             required
+             placeholder="Digite la especialidad"
+             #nombre = "ngModel"
+            >
+            <div class="alert alert-danger" *ngIf= "nombre.invalid && (nombre.dirty || nombre.touched)">
+                <div *ngIf= "nombre.errors.required">
+                    Digite la especialidad por favor
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+          <label>Observaciones: </label>
+             <textarea
+             class = "form-control"
+              id = "nombres"
+              [(ngModel)] = "especialidad.observaciones"
+              name = "nombres"
+              required
+              placeholder="Digite las observaciones"
+              #obervaciones = "ngModel"
+             >
+             </textarea>
+             <div class="alert alert-danger" *ngIf= "obervaciones.invalid && (obervaciones.dirty || obervaciones.touched)">
+                 <div *ngIf= "obervaciones.errors.required">
+                     Digite las observaciones
+                 </div>
+             </div>
+         </div>
+
+           <button class="btn btn-success"[disabled]= "!pacienteForm.form.valid">Guardar</button>
+
+    </form>
+  </div>
+  </div>
+
