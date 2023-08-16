@@ -26,6 +26,7 @@ export class RegistroEspecialistaComponent implements OnInit {
     // Se obtiene la lista de especialidades desde el servicio
     this.especialidadService.listarEspecialidad()
       .subscribe(response => this.especialidades = response);
+      console.log("Lista de especialidades:", this.especialidades);
   }
 
   crearEspecialista() {

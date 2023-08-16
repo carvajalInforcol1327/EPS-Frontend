@@ -26,7 +26,11 @@
     
       
       <!-- Botón para guardar el especialista -->
-      <button type="submit" class="btn btn-primary" (click)="crearEspecialista()">Guardar</button>
+      <div class="d-flex justify-content-center">        
+        <button type="submit" class="btn btn-primary mr-2" (click)="crearEspecialista()">Guardar</button>
+        <button class="btn btn-info"  [routerLink]="['/lista-especialista']">Regresar</button>
+      </div>
     </form>
   </div>
 </div>
+

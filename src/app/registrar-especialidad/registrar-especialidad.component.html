@@ -1,5 +1,5 @@
 <div class="d-flex justify-content-center">
-  <div class="mb-3">
+  <div class="mb-3 align-items-end">
     <form>      
       <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label">Nombre</label>
@@ -14,7 +14,10 @@
           <input type="checkbox" class="form-control" [(ngModel)]="especialidad.enabled" name="enabled">
       </div>
 
-      <button type="submit" class="btn btn-primary" (click)="crearEspecialidad()">Guardar</button>
+      <div class="d-flex justify-content-center">
+        <button type="submit" class="btn btn-primary mr-2" (click)="crearEspecialidad()">Guardar</button>
+        <button class="btn btn-info" [routerLink]="['/lista-especialidades']">Regresar</button>
+      </div>
     </form>
   </div>
 </div>

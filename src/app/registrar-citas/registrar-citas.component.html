@@ -1,0 +1,77 @@
+<!--<app-dashboardcita></app-dashboardcita>-->
+
+<div class="formprincipal">
+  <div class="col-md-6 offset-md-3">
+    <div class="fondo">
+      <img src="../assets/registrocita.png" />
+    </div>
+    <h3 class="text-center">Registrar Cita</h3>
+<form (ngSubmit)= "onSubmit()" #citaForm = "ngForm">
+
+  <div class="form-group">
+   <label>Fecha: </label>
+      <input type = "date"
+      class = "form-control"
+       id = "cedula"
+       [(ngModel)] = "cita.fecha"
+       name = "fecha"
+       required
+       placeholder="Digite fecha de la cita"
+       #fecha = "ngModel"
+      >
+      <div class="alert alert-danger" *ngIf= "fecha.invalid && (fecha.dirty || fecha.touched)">
+          <div *ngIf= "fecha.errors.required">
+              Digite la fecha por favor
+          </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="especialista" class="col-form-label col-sm-2">Especialista</label>
+    <select class="form-control" [(ngModel)]="cita.especialista" name="especialista">
+      <option [ngValue]="undefined">---Seleccione un especialista---</option>
+      <option *ngFor="let especialista of especialistas" [ngValue]="especialista">{{especialista.nombres}}</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="pacinte" class="col-form-label col-sm-2">Paciente</label>
+    <select class="form-control" [(ngModel)]="cita.paciente" name="paciente">
+      <option [ngValue]="undefined">---Seleccione un paciente---</option>
+      <option *ngFor="let paciente of pacientes" [ngValue]="paciente">{{paciente.nombres}}</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>Observaciones: </label>
+       <textarea
+       class = "form-control"
+        id = "observacion"
+        [(ngModel)] = "cita.observacion"
+        name = "observacion"
+        required
+        minlength="8"
+        maxlength="30"
+        placeholder="Digite observaciones"
+        #observacion = "ngModel"
+       >
+       </textarea>
+       <div class="alert alert-danger" *ngIf= "observacion.invalid && (observacion.dirty || observacion.touched)">
+           <div *ngIf= "fecha.errors.required">
+               Digite la obseravcion por favor
+           </div>
+           <div *ngIf="observacion.errors.minlength">
+            Debe contener minimo 8 caracteres
+          </div>
+          <div *ngIf="observacion.errors.maxlength">
+            Debe contener maximo 10 carcateres
+          </div>
+     </div>
+   </div>
+
+   <button class="btn btn-success"[disabled]= "!citaForm.form.valid">Guardar</button>
+
+
+</form>
+</div>
+</div>

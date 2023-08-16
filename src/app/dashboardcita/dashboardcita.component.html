@@ -1,0 +1,27 @@
+<app-dashboard></app-dashboard>
+<mat-toolbar color = "primary" style="background-color: #666;">
+
+  <span>Gestión Citas</span>
+  <span class="example-spacer"></span>
+
+  <a [routerLink]="'/agendamiento'"
+  mat-icon-button class = "example-icon favorite-icon mr20 ml70" arial-label="Example icon-button with heart icon">
+   <mat-icon>event</mat-icon>
+   Agendamiento
+  </a>
+
+  <a [routerLink]="'/listar-citas-todas'"
+  mat-icon-button class = "example-icon favorite-icon mr20 ml150" arial-label="Example icon-button with heart icon">
+   <mat-icon>list_alt</mat-icon>
+   Lista Citas
+  </a>
+
+  <a [routerLink]="'/registrar-citas'"
+  mat-icon-button class = "example-icon favorite-icon mr20 ml185" arial-label="Example icon-button with heart icon">
+   <mat-icon><span class="material-symbols-outlined">
+    fact_check
+    </span></mat-icon>
+   Registrar Cita
+  </a>
+
+ </mat-toolbar>

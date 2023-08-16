@@ -1,28 +1,2 @@
-<div class="container-fluid">
-  <!-- Barra de navegación responsiva -->
-  <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-    <!-- Botón de navegación para dispositivos móviles -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <!-- Contenedor del menú de navegación colapsable -->
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <!-- Elementos de navegación -->
-        <li class="nav-item">
-          <a routerLink="lista-especialista" routerLinkActive="active" class="nav-link">Especialista</a>
-        </li>
-        <li class="nav-item">
-          <a routerLink="lista-especialidades" routerLinkActive="active" class="nav-link">Especialidad</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-  <!-- Contenedor de la imagen de fondo, centrada horizontal y verticalmente -->
-  <div class="d-flex justify-content-center align-items-center fondo">
-    <!-- Imagen de banner responsiva -->
-    <img src="../assets/bannerinforcol.png" class="img-fluid" alt="Banner" />
-  </div>
-</div>
-<!-- Espacio para cargar componentes dinámicamente -->
+<app-navbar></app-navbar>
 <router-outlet></router-outlet>
