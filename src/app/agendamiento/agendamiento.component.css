@@ -1,0 +1,38 @@
+* {
+  box-sizing: border-box;
+}
+
+.formprincipal {
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+.fondo {
+  display: flex;
+  justify-content: center;
+}
+
+img {
+  width: 100px;
+  height: auto;
+}
+
+img {
+  height: auto;
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  padding-bottom: 50px;
+  padding-top: 50px;
+}

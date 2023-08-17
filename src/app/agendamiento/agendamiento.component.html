@@ -1,33 +1,22 @@
-
 <app-dashboardcita></app-dashboardcita>
-
 <div class="formprincipal d-flex flex-column align-items-center">
   <div class="formprincipal d-flex flex-column align-items-center">
     <div class="fondo">
       <img src="../assets/doctor.png" />
     </div>
-    <h3 class="text-center">Seleccion Especialista</h3>
-    <form (ngSubmit)= "onSubmit()" #especialistaForm = "ngForm" class="form-inline">
-         <div class="form-group mr-2">
-          <ng-select
-          class="search-select"
-          [items]="especialistas"
-          [bindValue]="'cedula'"
-          [bindLabel]="'nombres'"
-          [(ngModel)]="especialistaSeleccionado"
-          name="especialista"
-          required
-          [clearable]="true"
-          [notFoundText]="'No se encontraron especialistas'"
-        >
-
-        </ng-select>
-         </div>
-
-           <button class="btn btn-success" [disabled]= "!especialistaForm.form.valid">Buscar</button>
+    <form (ngSubmit)="onSubmit()" #especialistaForm="ngForm" class="d-flex justify-content-center align-items-center">
+      <div class="form-group mr-2">
+        <!-- Campo de selección para la especialidad del especialista -->
+        <select class="form-control" [(ngModel)]="especialistaSeleccionado" name="especialista">
+          <option [ngValue]="undefined">--- Seleccione un especialista ---</option>
+          <!-- Itera sobre la lista de especialistas y crea opciones en el select -->
+          <option *ngFor="let especialista of especialistas" [ngValue]="especialista.cedula">{{especialista.nombres}}</option>
+        </select>
+      </div>
+      <button class="btn btn-success align-self-start" [disabled]="!especialistaForm.form.valid">Buscar</button>
     </form>
   </div>
   <div class="container">
     <full-calendar [options]="calendarOptions"></full-calendar>
   </div>
-  </div>
+</div>

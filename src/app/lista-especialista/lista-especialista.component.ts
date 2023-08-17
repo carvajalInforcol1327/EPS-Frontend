@@ -23,7 +23,7 @@ export class ListaEspecialistaComponent implements OnInit {
   }
   
   ActualizarEspecialista(cedula:number):void{
-    this.router.navigate(['ActualizarEspecialista',cedula])
+    this.router.navigate(['actualizarEspecialista',cedula])
   }
 
 }

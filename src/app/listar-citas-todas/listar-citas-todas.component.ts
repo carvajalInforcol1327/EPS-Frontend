@@ -25,7 +25,6 @@ export class ListarCitasTodasComponent implements OnInit {
       this.citas = dato;
       this.datosOriginales = this.citas;
       this.datosFiltrados = [...this.datosOriginales];
-      console.log(this.citas);
     })
   }
 

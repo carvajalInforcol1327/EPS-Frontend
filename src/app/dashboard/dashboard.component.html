@@ -1,30 +1,30 @@
-  <mat-toolbar color = "primary">
+<mat-toolbar color="primary">
+  <span>Gestión EPS</span>
+  <span class="example-spacer"></span>
 
-    <span>Gestión EPS</span>
-    <span class="example-spacer"></span>
-  
-    <a [routerLink]="'/dashboardpaciente'"
-    mat-icon-button class = "example-icon favorite-icon mr20 ml70" arial-label="Example icon-button with heart icon">
-     <mat-icon>people</mat-icon>
-     Paciente
+  <div class="d-flex align-items-center">
+    <a [routerLink]="'/dashboardpaciente'" mat-icon-button class="example-icon favorite-icon mx-2"
+      arial-label="Example icon-button with heart icon">
+      <mat-icon>people</mat-icon>
     </a>
+    <span class="mx-2">Paciente</span>
 
-    <a [routerLink]="'/lista-especialista'"
-    mat-icon-button class = "example-icon favorite-icon mr20 ml70" arial-label="Example icon-button with heart icon">
-     <mat-icon>badge</mat-icon>
-     Especialista
+    <a [routerLink]="'/lista-especialista'" mat-icon-button class="example-icon favorite-icon mx-2"
+      arial-label="Example icon-button with heart icon">
+      <mat-icon>assignment_ind</mat-icon>
     </a>
+    <span class="mx-2">Especialista</span>
 
-    <a [routerLink]="'/lista-especialidades'"
-    mat-icon-button class = "example-icon favorite-icon mr20 ml70" arial-label="Example icon-button with heart icon">
-     <mat-icon>badge</mat-icon>
-     Especialidad
+    <a [routerLink]="'/lista-especialidades'" mat-icon-button class="example-icon favorite-icon mx-2"
+      arial-label="Example icon-button with heart icon">
+      <mat-icon>assignment</mat-icon>
     </a>
-  
-    <a [routerLink]="'/dashboardcita'"
-    mat-icon-button class = "example-icon favorite-icon mr50 ml100" arial-label="Example icon-button with heart icon">
-     <mat-icon>event_available</mat-icon>
-     Cita
-    </a>
+    <span class="mx-2">Especialidad</span>
 
-   </mat-toolbar>  
+    <a [routerLink]="'/dashboardcita'" mat-icon-button class="example-icon favorite-icon mx-2"
+      arial-label="Example icon-button with heart icon">
+      <mat-icon>event_available</mat-icon>
+    </a>
+    <span class="mx-2">Cita</span>
+  </div>
+</mat-toolbar>

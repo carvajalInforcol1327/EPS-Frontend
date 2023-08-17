@@ -1,0 +1,31 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  .formprincipal{
+    padding-bottom: 50px;
+    padding-top: 20px;
+  }
+  
+  .fondo{
+    display: flex;
+    justify-content: center;
+  }
+  
+  img {
+    width: 100px; /* Ajusta el ancho de la imagen */
+    height: auto; /* Ajusta la altura de la imagen proporcionalmente */
+  }
+  
+  img {
+  
+    height: auto; /* Ajusta la altura de la imagen proporcionalmente */
+    opacity: 0; /* Establece la opacidad inicial de la imagen en 0 (invisible) */
+    animation: fadeIn 1s forwards; /* Aplica la animación de desvanecimiento */
+  }
+  
+  @keyframes fadeIn {
+    to {
+      opacity: 1; /* La opacidad de la imagen cambia a 1 (completamente visible) */
+    }
+  }
