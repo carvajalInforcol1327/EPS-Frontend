@@ -20,6 +20,12 @@ export class EspecialidadService {
     return this.httpClient.get<Especialidad[]>(`${this.baseURL}`);
   }
 
- 
+ actualizarEspecialidad(especialidad_id:number,especialidad:Especialidad):Observable<Object>{
+  return this.httpClient.put(`${this.baseURL}/${especialidad_id}`,especialidad);
+ }
+
+ obtenerEspecialidadxid(especialidad_id:number) : Observable<Especialidad>{
+  return this.httpClient.get<Especialidad>(`${this.baseURL}/${especialidad_id}`);
+ }
 
 }

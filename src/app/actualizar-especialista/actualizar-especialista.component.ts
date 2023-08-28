@@ -91,8 +91,5 @@ export class ActualizarEspecialistaComponent implements OnInit {
       .crearEspecialista(this.especialista)
       .subscribe((response) => console.log('EXITO!!'));
   }
-/*
-  limpiarCampos() {
-    this.especialista = new Especialista(); // Restablece a un objeto Especialista nuevo    
-  }*/
+
 }

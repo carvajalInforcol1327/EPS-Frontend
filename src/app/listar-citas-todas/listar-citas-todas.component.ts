@@ -20,12 +20,15 @@ export class ListarCitasTodasComponent implements OnInit {
     this.obtenerCitas();
   }
 
-  private obtenerCitas(){
-    this.citaservice.obtenerListaDeCitas().subscribe(dato =>{
+  private obtenerCitas() {
+    this.citaservice.obtenerListaDeCitas().subscribe(dato => {
       this.citas = dato;
-      this.datosOriginales = this.citas;
+      this.datosOriginales = this.citas.map(cita => ({
+        ...cita,
+        enabled: cita.enabled ? 'Activo' : 'Cancelada'
+      }));
       this.datosFiltrados = [...this.datosOriginales];
-    })
+    });
   }
 
   filtrarDatos() {
@@ -34,6 +37,10 @@ export class ListarCitasTodasComponent implements OnInit {
       // Verifica si el valor de la propiedad 'evento' contiene el término de búsqueda
       return dato.fecha.toLowerCase().includes(this.filtro.toLowerCase());
     });
+  }
+
+  ActualizarCita(id:number):void{
+    this.router.navigate(['estado-cita',id])
   }
 
 }

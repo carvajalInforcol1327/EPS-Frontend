@@ -10,7 +10,6 @@
           <th scope="col">ID</th>
           <th>Nombre</th>
           <th>Observación</th>
-          <th>Estado</th>
           <th>Acciones</th>
         </tr>
       </thead>
@@ -19,10 +18,9 @@
           <td>{{especialidades.especialidad_id}}</td>
           <td>{{especialidades.nombre}}</td>
           <td>{{especialidades.observaciones}}</td>
-          <td>{{especialidades.enabled}}</td>
-          <td>
-            <button class="btn btn-info mr-2">Editar</button>
-            <button class="btn btn-danger">Eliminar</button>
+           <td class="btn-container text-center">
+            <button (click)="ActualizarEspecialidad(especialidades.especialidad_id)" class="btn btn-info">Editar</button>
+            <!--<button class="btn btn-danger">Eliminar</button>-->
           </td>
         </tr>
       </tbody>  

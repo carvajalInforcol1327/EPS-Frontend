@@ -1,0 +1,25 @@
+<app-dashboard></app-dashboard>
+
+<div class="container">
+  <div class="header">
+    <!-- Encabezado -->
+  </div>
+  
+  <div class="form-container">
+    <form (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Nombre</label>
+        <input type="text" class="form-control" name="nombre" [(ngModel)]="especialidad.nombre" readonly>
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Observación</label>
+        <input type="text" class="form-control" name="nombre" [(ngModel)]="especialidad.observaciones" readonly>
+      </div>
+      <div class="form-group col-md-6">
+        <label>Estado activo:</label>
+        <input type="checkbox" class="form-control" [(ngModel)]="especialidad.enabled" name="enabled">
+      </div>
+      <button type="submit" class="btn btn-primary">Actualizar</button>
+    </form>
+  </div>
+</div>

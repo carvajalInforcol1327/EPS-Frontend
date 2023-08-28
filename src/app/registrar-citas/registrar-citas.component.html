@@ -9,24 +9,6 @@
 <form (ngSubmit)= "onSubmit()" #citaForm = "ngForm">
 
   <div class="form-group">
-   <label>Fecha: </label>
-      <input type = "date"
-      class = "form-control"
-       id = "cedula"
-       [(ngModel)] = "cita.fecha"
-       name = "fecha"
-       required
-       placeholder="Digite fecha de la cita"
-       #fecha = "ngModel"
-      >
-      <div class="alert alert-danger" *ngIf= "fecha.invalid && (fecha.dirty || fecha.touched)">
-          <div *ngIf= "fecha.errors.required">
-              Digite la fecha por favor
-          </div>
-    </div>
-  </div>
-
-  <div class="form-group">
     <label for="especialista" class="col-form-label col-sm-2">Especialista</label>
     <select class="form-control" [(ngModel)]="cita.especialista" name="especialista">
       <option [ngValue]="undefined">---Seleccione un especialista---</option>
@@ -34,13 +16,48 @@
     </select>
   </div>
 
-  <div class="form-group">
-    <label for="pacinte" class="col-form-label col-sm-2">Paciente</label>
-    <select class="form-control" [(ngModel)]="cita.paciente" name="paciente">
-      <option [ngValue]="undefined">---Seleccione un paciente---</option>
-      <option *ngFor="let paciente of pacientes" [ngValue]="paciente">{{paciente.nombres}}</option>
-    </select>
+  <div class="alert alert-danger" *ngIf= "fecha.invalid && (fecha.dirty || fecha.touched)">
+    <div *ngIf= "fecha.errors.required">
+        Digite la fecha por favor
+    </div>
+</div>
+   <div class="form-group">
+   <label>Fecha: </label>
+      <input type = "date"
+      class = "form-control"
+       id = "fecha"
+       [(ngModel)] = "cita.fecha"
+       name = "fecha"
+       required
+       placeholder="Digite hora de la cita"
+       #hora = "ngModel"
+      >
+      <div class="alert alert-danger" *ngIf= "hora.invalid && (hora.dirty || hora.touched)">
+          <div *ngIf= "hora.errors.required">
+              Digite la hora por favor
+          </div>
+       </div>
   </div>
+  <div class="form-group">
+    <label>Hora: </label>
+       <input type = "time"
+       class = "form-control"
+        id = "horaCita"
+        [(ngModel)] = "cita.horaCita"
+        name = "horaCita"
+        required
+        placeholder="Digite fecha de la cita"
+        #fecha = "ngModel">
+
+       <div class="form-group">
+        <label for="pacinte" class="col-form-label col-sm-2">Paciente</label>
+        <select class="form-control" [(ngModel)]="cita.paciente" name="paciente">
+          <option [ngValue]="undefined">---Seleccione un paciente---</option>
+          <option *ngFor="let paciente of pacientes" [ngValue]="paciente">{{paciente.nombres}}</option>
+        </select>
+      </div>
+
+   </div>
 
   <div class="form-group">
     <label>Observaciones: </label>
@@ -51,20 +68,20 @@
         name = "observacion"
         required
         minlength="8"
-        maxlength="30"
+        maxlength="250"
         placeholder="Digite observaciones"
         #observacion = "ngModel"
        >
        </textarea>
        <div class="alert alert-danger" *ngIf= "observacion.invalid && (observacion.dirty || observacion.touched)">
            <div *ngIf= "fecha.errors.required">
-               Digite la obseravcion por favor
+               Digite la observacion por favor
            </div>
            <div *ngIf="observacion.errors.minlength">
             Debe contener minimo 8 caracteres
           </div>
           <div *ngIf="observacion.errors.maxlength">
-            Debe contener maximo 10 carcateres
+            Debe contener maximo 250 carcateres
           </div>
      </div>
    </div>

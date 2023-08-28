@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RegistrarEspecialidadComponent } from './registrar-especialidad/registrar-especialidad.component';
 import { ListaEspecialidadesComponent } from './lista-especialidades/lista-especialidades.component';
@@ -18,6 +18,8 @@ import { DashboardpacienteComponent } from './dashboardpaciente/dashboardpacient
 import { RegistrarCitaComponent } from './registrar-cita/registrar-cita.component';
 import { ListarCitasTodasComponent } from './listar-citas-todas/listar-citas-todas.component';
 import { DashboardcitaComponent } from './dashboardcita/dashboardcita.component';
+import { EstadoCitaComponent } from './estado-cita/estado-cita.component';
+import { ActualizarEspecialidadComponent } from './actualizar-especialidad/actualizar-especialidad.component';
 
 
 const routes: Routes = [
@@ -37,8 +39,10 @@ const routes: Routes = [
   { path: 'agendamiento',component : AgendamientoComponent},
   { path: 'login', component: LoginComponent, pathMatch:'full' },
   { path: 'registrar-cita', component: RegistrarCitaComponent },
-  {path : 'listar-citas-todas',component : ListarCitasTodasComponent},
+  { path: 'listar-citas-todas',component : ListarCitasTodasComponent},
   { path: 'dashboardcita', component: DashboardcitaComponent, pathMatch:'full' },
+  { path: 'estado-cita/:id',component: EstadoCitaComponent,pathMatch:'full'},
+  { path: 'actualizarEspecialidad/:especialidad_id', component: ActualizarEspecialidadComponent,pathMatch:'full'},
  
 ];
 

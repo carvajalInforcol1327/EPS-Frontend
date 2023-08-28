@@ -35,6 +35,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { DashboardcitaComponent } from './dashboardcita/dashboardcita.component';
 import { ListarCitasPacientesComponent } from './listar-citas-pacientes/listar-citas-pacientes.component';
 import { ListarCitasTodasComponent } from './listar-citas-todas/listar-citas-todas.component';
+import { EstadoCitaComponent } from './estado-cita/estado-cita.component';
+import { ActualizarEspecialidadComponent } from './actualizar-especialidad/actualizar-especialidad.component';
 
 
 @NgModule({
@@ -61,7 +63,9 @@ import { ListarCitasTodasComponent } from './listar-citas-todas/listar-citas-tod
     RegistrarCitasComponent,
     DashboardcitaComponent,
     ListarCitasPacientesComponent,
-    ListarCitasTodasComponent
+    ListarCitasTodasComponent,
+    EstadoCitaComponent,
+    ActualizarEspecialidadComponent
     
   ],
   imports: [
@@ -79,7 +83,6 @@ import { ListarCitasTodasComponent } from './listar-citas-todas/listar-citas-tod
     MatIconModule,
     MatTableModule,
     FullCalendarModule,
-    //MegaMenuModule,
     NgSelectModule
   ],
   providers: [],

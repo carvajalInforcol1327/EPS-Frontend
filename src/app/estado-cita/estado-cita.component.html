@@ -1,0 +1,73 @@
+<app-dashboardcita></app-dashboardcita>
+<div class="formprincipal">
+  <div class="col-md-6 offset-md-3">
+    <div class="fondo">
+      <img src="../assets/registrocita.png" />
+    </div>
+    <h3 class="text-center">Cancelar cita</h3>
+
+    <form (ngSubmit)= "onSubmit()" #citaForm = "ngForm">
+
+      <div class="form-group col-md-6">
+        <!-- Campo de selección para el especialista -->
+        <label for="especialista" class="col-form-label col-sm-2">Especialista</label>
+        <select class="form-control" [(ngModel)]="cita.especialista.nombres" name="especialista">
+          <option [ngValue]="undefined">---Seleccione una especialidad---</option>
+          <option *ngFor="let especialista of especialistas" [ngValue]="especialista.nombres" >{{ especialista.nombres }} </option>
+        </select>
+      </div> 
+
+      <div class="form-group col-md-6">
+        <label for="paciente" class="col-form-label col-sm-2">Paciente</label>
+        <select class="form-control" [(ngModel)]="cita.paciente.nombres" name="paciente">
+          <option [ngValue]="undefined">---Seleccione un paciente---</option>
+          <option *ngFor="let paciente of pacientes" [ngValue]="paciente.nombres">{{paciente.nombres}}</option>
+        </select>
+      </div>
+
+      
+      <div class="form-group col-md-6">
+      <label>Fecha: </label>
+          <input type = "date"
+          class = "form-control"
+          id = "fecha"
+          [(ngModel)] = "cita.fecha"
+          name = "fecha"
+          #hora = "ngModel" readonly
+          >          
+      </div>
+
+      <div class="form-group col-md-6">
+        <label>Hora: </label>
+          <input type = "time"
+          class = "form-control"
+            id = "horaCita"
+            [(ngModel)] = "cita.horaCita"
+            name = "horaCita"
+            readonly
+            #fecha = "ngModel">
+      </div>
+
+      <div class="form-group col-md-6">
+        <label>Observaciones: </label>
+          <textarea
+          class = "form-control"
+            id = "observacion"
+            [(ngModel)] = "cita.observacion"
+            name = "observacion"
+            #observacion = "ngModel"
+            readonly
+          >
+          </textarea>
+          
+        <div class="form-group col-md-6">
+            <label>Estado activo:</label>
+            <input type="checkbox" class="form-control" [(ngModel)]="cita.enabled" name="enabled">
+        </div>
+      </div>
+
+      <button class="btn btn-success"[disabled]= "!citaForm.form.valid">Actualizar</button>
+
+    </form>
+  </div>
+</div>

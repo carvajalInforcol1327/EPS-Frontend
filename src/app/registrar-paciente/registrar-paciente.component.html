@@ -10,19 +10,19 @@
   <!--SE DECLARA EL METODO DE NUESTRO COMPONENTE REGISTRAR paciente-->
   <!--ngModel se encarga de relacionar nuestro formulario, con el paciente creado en registrar paciente TS-->
   <form (ngSubmit)= "onSubmit()" #pacienteForm = "ngForm">
-      <div class="form-group">
-       <label>Cedula: </label>
-          <input type = "number"
-          class = "form-control"
-           id = "cedula"
-           [(ngModel)] = "paciente.cedula"
-           name = "cedula"
-           required
-           minlength="8"
-           maxlength="10"
-           placeholder="Digite su cedula"
-           #cedula = "ngModel"
-          >
+      <div class="form-group col-md-6">
+            <label>Cedula: </label>
+                <input type = "number"
+                class = "form-control"
+                id = "cedula"
+                [(ngModel)] = "paciente.cedula"
+                name = "cedula"
+                required
+                minlength="8"
+                maxlength="10"
+                placeholder="Digite su cedula"
+                #cedula = "ngModel"
+                >
           <div class="alert alert-danger" *ngIf= "cedula.invalid && (cedula.dirty || cedula.touched)">
               <div *ngIf= "cedula.errors.required">
                   Digite su nombre por favor
@@ -35,7 +35,7 @@
               </div>
           </div>
       </div>
-      <div class="form-group">
+      <div class="form-group col-md-6">
         <label>Nombre: </label>
            <input type = "text"
            class = "form-control"
@@ -52,7 +52,7 @@
                </div>
            </div>
        </div>
-       <div class="form-group">
+       <div class="form-group col-md-6">
         <label>Apellidos: </label>
            <input type = "text"
            class = "form-control"
@@ -69,7 +69,7 @@
                </div>
            </div>
        </div>
-       <div class="form-group">
+       <div class="form-group col-md-6">
         <label>Tipo de Sangre:</label>
         <select class="form-control" id="rh" [(ngModel)]="paciente.rh" name="rh" required>
           <option value="" selected disabled defaultSelected>Seleccione su tipo de sangre</option>
@@ -83,7 +83,7 @@
             <option value="O-">O-</option>
         </select>
     </div>
-       <div class="form-group">
+       <div class="form-group col-md-6">
         <label>Telefono: </label>
            <input type = "text"
            class = "form-control"
@@ -104,7 +104,7 @@
             </div>
            </div>
        </div>
-        <div class="form-group">
+        <div class="form-group col-md-6">
           <label>Email: </label>
              <input type = "text"
              class = "form-control"
@@ -125,7 +125,7 @@
               </div>
               </div>
          </div>
-         <div class="form-group">
+         <div class="form-group col-md-6">
           <label>Departamento: </label>
              <input type = "text"
              class = "form-control"
@@ -142,7 +142,7 @@
                  </div>
              </div>
          </div>
-         <div class="form-group">
+         <div class="form-group col-md-6">
           <label>Ciudad: </label>
              <input type = "text"
              class = "form-control"
@@ -159,7 +159,7 @@
                  </div>
              </div>
          </div>
-         <div class="form-group">
+         <div class="form-group col-md-6">
           <label>Direccion: </label>
              <input type = "text"
              class = "form-control"

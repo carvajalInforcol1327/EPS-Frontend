@@ -13,6 +13,11 @@ body, html {
   background-color: #f0f7ff; /* Color de fondo azul claro */
 }
 
+.header {
+  /* Estilos para el encabezado */
+  margin-bottom: 20px; /* Espaciado inferior */
+}
+
 .form-container {
   background-color: white; /* Fondo blanco del contenedor del formulario */
   padding: 20px;

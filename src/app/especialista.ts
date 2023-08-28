@@ -12,7 +12,7 @@ export class Especialista {
     ciudad:string;
     direccion:string;
     especialidad:Especialidad ;
-    enabled:boolean;
+    enabled:boolean
 
 
 }

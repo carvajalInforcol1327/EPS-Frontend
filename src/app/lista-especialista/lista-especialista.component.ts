@@ -11,16 +11,26 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class ListaEspecialistaComponent implements OnInit {
 
-  especialista: Especialista[] = []; // Arreglo para almacenar la lista de especialistas
+especialistas: Especialista[] = []; // Arreglo para almacenar la lista de especialistas
+ prueba : any[];
 
   constructor(private especialistaService: EspecialistaService,private router:Router,private route:ActivatedRoute) { }
 
   ngOnInit(): void {
-    // Método llamado al inicializar el componente
-    // Se obtiene la lista de especialistas desde el servicio
-    this.especialistaService.listarEspecialista()
-      .subscribe(response =>this.especialista = response); // Se asigna la respuesta a la propiedad especialista
+    this.obtenerEspecialistas();
   }
+
+  private obtenerEspecialistas() {
+    this.especialistaService.listarEspecialista().subscribe(dato => {
+      this.especialistas = dato;
+      this.prueba = this.especialistas.map(especialista => ({
+        ...especialista,
+        enabled: especialista.enabled  ? 'Activo' : 'Cancelada'
+      }));
+
+      });
+  }
+  
   
   ActualizarEspecialista(cedula:number):void{
     this.router.navigate(['actualizarEspecialista',cedula])

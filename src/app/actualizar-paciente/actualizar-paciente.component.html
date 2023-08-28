@@ -1,4 +1,4 @@
-<!--<app-dashboardpaciente></app-dashboardpaciente> -->
+<app-dashboardpaciente></app-dashboardpaciente>
 <div class="formprincipal">
   <div class="col-md-6 offset-md-3">
     <div class="fondo">
@@ -10,10 +10,7 @@
     <form (ngSubmit)="onSubmit()" #pacienteForm="ngForm">
       <div class="form-group">
         <label>Cedula: </label>
-        <input
-          type="number"
-          class="form-control"
-          id="cedula"
+        <input type="number" class="form-control" id="cedula"
           [(ngModel)]="paciente.cedula"
           name="cedula"
           required
@@ -32,7 +29,7 @@
             Debe contener minimo 4 caracteres
           </div>
           <div *ngIf="cedula.errors.maxlength">
-            Debe contener maximo 10 carcateres
+            Debe contener maximo 25 carcateres
           </div>
         </div>
       </div>
@@ -45,7 +42,7 @@
           [(ngModel)]="paciente.nombres"
           name="nombres"
           required
-          placeholder="Digite su cedula"
+          placeholder="Digite su nombre"
           #nombres="ngModel"
         />
         <div

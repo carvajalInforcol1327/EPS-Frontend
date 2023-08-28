@@ -42,20 +42,26 @@ export class RegistrarCitasComponent implements OnInit{
     }
 
     onSubmit(){
+      // Asegurar que la cadena de hora esté en el formato adecuado
+    this.cita.horaCita = this.formatHour(this.cita.horaCita);
       this.guardarCita();
     }
 
     private guardarCita(){
       this.citaService.registrarCita(this.cita).subscribe(dato=>{
         this.recarga();
-      },error => console.log(error))
+      },error => console.log('Error al registrar la cita:', error?.error?.message))
     }
 
   recarga(): void {
     window.location.reload();
   }
 
+  formatHour(hour: string): string {
+    // Parsea la cadena de hora en un objeto Date para luego formatearla
+    const date = new Date(`2000-01-01T${hour}:00`);
+    const formattedHour = date.toTimeString().substring(0, 5); // Obtiene solo la parte de HH:mm
+    return formattedHour;
+  }
   
-
-
 }
