@@ -12,15 +12,24 @@ export class ListaEspecialidadesComponent implements OnInit {
 
   especialidad: Especialidad[] = [];
 
+
   constructor(private especialidadService: EspecialidadService, private router:Router, private route:ActivatedRoute) {}
 
   ngOnInit(): void {
-    // Al inicializar el componente, se llama al servicio para obtener la lista de especialidades
     this.especialidadService.listarEspecialidad()
-      .subscribe(response => this.especialidad = response);
+      .subscribe(response => {
+        this.especialidad = response.map(especialidad => ({
+          ...especialidad,
+          estadoTraducido: especialidad.enabled ? 'Activo' : 'Cancelado'
+        }));
+      });
   }
+  
 
   ActualizarEspecialidad(especialidad_id:number):void{
     this.router.navigate(['actualizarEspecialidad',especialidad_id])
   }
+
+  
+
 }
